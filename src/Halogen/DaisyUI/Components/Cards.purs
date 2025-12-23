@@ -3,6 +3,7 @@ module Halogen.DaisyUI.Components.Cards
   , renderCardWithOverlayImg
   , renderCardWithOverlayImgSingle
   , renderCardWithOverlayImg2
+  , renderHover3DCard
   ) where
 
 import Prelude
@@ -50,5 +51,22 @@ renderCardWithOverlayImg2 imageUrl elements actions =
     , HH.div [ HP.classes [ HH.ClassName "card-body place-content-between" ] ]
         $ elements
         <> [ HH.div [ HP.classes [ HH.ClassName "card-actions justify-end" ] ] actions ]
+    ]
+
+-- | Wraps content in a daisyUI 3D hover card effect.
+-- | The 8 empty divs are required for the CSS 3D grid effect.
+renderHover3DCard :: forall w i. HH.HTML w i -> HH.HTML w i
+renderHover3DCard content =
+  HH.div [ HP.classes [ HH.ClassName "hover-3d" ] ]
+    [ content
+    -- 8 empty divs needed for the 3D effect
+    , HH.div_ []
+    , HH.div_ []
+    , HH.div_ []
+    , HH.div_ []
+    , HH.div_ []
+    , HH.div_ []
+    , HH.div_ []
+    , HH.div_ []
     ]
 
