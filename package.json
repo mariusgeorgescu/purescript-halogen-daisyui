@@ -1,0 +1,14 @@
+{
+  "name": "purescript-halogen-daisyui",
+  "version": "0.1.0",
+  "description": "Halogen components and utilities for daisyUI",
+  "scripts": {
+    "build": "spago build",
+    "clean": "rm -rf output .spago"
+  },
+  "dependencies": {
+    "purescript": "^0.15.15",
+    "spago": "^0.93.29"
+  }
+}
+
