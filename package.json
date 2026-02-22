@@ -4,11 +4,15 @@
   "description": "Halogen components and utilities for daisyUI",
   "scripts": {
     "build": "spago build",
-    "clean": "rm -rf output .spago"
+    "clean": "rm -rf output .spago",
+    "format": "purs-tidy format-in-place 'src/**/*.purs'",
+    "check-formatting": "purs-tidy check 'src/**/*.purs'"
   },
   "dependencies": {
     "purescript": "^0.15.15",
     "spago": "^0.93.29"
+  },
+  "devDependencies": {
+    "purs-tidy": "^0.11.0"
   }
 }
-

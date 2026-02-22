@@ -1,0 +1,13 @@
+---
+description: Project tooling override for purescript-halogen-daisyui
+globs: "**/*.purs"
+alwaysApply: false
+---
+
+# Project Tooling Override
+
+This library uses **spago.yaml** (not spago.dhall). Build: `spago build`.
+
+Use `npm run format` and `purs-tidy` where applicable; add these scripts if missing.
+
+No AppM; this is a component/utility library. Re-export barrels under `Halogen.DaisyUI.*`.

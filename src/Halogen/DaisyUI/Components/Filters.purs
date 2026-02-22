@@ -12,17 +12,18 @@ renderFilter :: forall w i. String -> Array String -> HH.HTML w i
 renderFilter name options =
   HH.form [ HP.classes [ HH.ClassName "filter" ] ]
     $ [ HH.input [ HP.classes [ HH.ClassName "btn btn-square" ], HP.type_ HP.InputReset, HP.value "×" ] ]
-    <> ( map
-          ( \o ->
-              HH.label_
-                [ HH.input
-                    [ HP.classes [ HH.ClassName "btn" ]
-                    , HP.type_ HP.InputRadio
-                    , HP.name name
-                    , HP.attr (HH.AttrName "aria-label") o
+        <>
+          ( map
+              ( \o ->
+                  HH.label_
+                    [ HH.input
+                        [ HP.classes [ HH.ClassName "btn" ]
+                        , HP.type_ HP.InputRadio
+                        , HP.name name
+                        , HP.attr (HH.AttrName "aria-label") o
+                        ]
                     ]
-                ]
+              )
+              options
           )
-          options
-      )
 

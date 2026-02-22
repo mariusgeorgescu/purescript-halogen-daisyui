@@ -40,7 +40,7 @@ renderCardWithOverlayImgSingle imageUrl elements actions =
     [ HH.figure_ [ HH.img [ HP.src imageUrl ] ]
     , HH.div [ HP.classes [ HH.ClassName "card-body place-content-center" ] ]
         $ [ HH.div [ HP.classes [ HH.ClassName "stat" ] ] elements ]
-        <> [ HH.div [ HP.classes [ HH.ClassName "card-actions justify-end" ] ] actions ]
+            <> [ HH.div [ HP.classes [ HH.ClassName "card-actions justify-end" ] ] actions ]
     ]
 
 -- | Squircle-masked card with image overlay
@@ -50,7 +50,7 @@ renderCardWithOverlayImg2 imageUrl elements actions =
     [ HH.figure_ [ HH.img [ HP.src imageUrl ] ]
     , HH.div [ HP.classes [ HH.ClassName "card-body place-content-between" ] ]
         $ elements
-        <> [ HH.div [ HP.classes [ HH.ClassName "card-actions justify-end" ] ] actions ]
+            <> [ HH.div [ HP.classes [ HH.ClassName "card-actions justify-end" ] ] actions ]
     ]
 
 -- | Wraps content in a daisyUI 3D hover card effect.
@@ -69,4 +69,3 @@ renderHover3DCard content =
     , HH.div_ []
     , HH.div_ []
     ]
-
