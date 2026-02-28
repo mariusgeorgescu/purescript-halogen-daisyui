@@ -9,15 +9,16 @@ import Prelude
 import Data.String (drop, length, take)
 import Data.String as String
 
--- | Truncate a string to show first and last `i` characters with "..." in the middle
--- | Example: shortString 5 "Hello World Example" -> "Hello...ample"
-shortString :: Int -> String -> String
-shortString i s =
+-- | Truncate a string to show first and last `i` characters with `middle` in between
+-- | Example: shortString 5 "..." "Hello World Example" -> "Hello...ample"
+-- | Example: shortString 3 "*" "abc123xyz" -> "abc*xyz"
+shortString :: Int -> String -> String -> String
+shortString i middle s =
   let
     len = length s
   in
     if len > (2 * i) then
-      take i s <> "..." <> drop (len - i) s
+      take i s <> middle <> drop (len - i) s
     else
       s
 
